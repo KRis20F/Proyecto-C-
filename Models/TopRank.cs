@@ -1,4 +1,4 @@
-// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+public class TopRank {
     public class Cache
     {
         public string status { get; set; }
@@ -44,3 +44,4 @@
         public bool verified { get; set; }
         public string country { get; set; }
     }
+}
