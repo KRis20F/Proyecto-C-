@@ -1,4 +1,4 @@
-namespace TopRank {
+public class TopRank {
     public class Cache
     {
         public string status { get; set; }

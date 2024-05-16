@@ -1,0 +1,20 @@
+@model List<TopSprint.Root>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ranking</title>
+</head>
+<body>
+    <h1>Top Sprint Ranking</h1>
+    <table>
+        @foreach (var rankObject in Model)
+        {
+            <tr>
+                <td>@($"{rankObject.name}")</td>
+                <td><a href="@($"https://jstris.jezevec10.com/replay/{rankObject.id}")" target="_blank">replay</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

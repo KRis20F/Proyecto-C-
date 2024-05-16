@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PPYmCp6kuYzW0WhAivEE4shur7dV38n3C41RXPAl8+VZmNIeYEN1H3JSGLObx/x9EaDjfQ0VjNAzSQmFDF0yYw==",
+  "dgSpecHash": "Ck8Ndd7wbIPMH2rSx9ByxvpeaAmOW4axu0CtrwVlQcqU0V8L0oFo/xR1mtRN9fKf3Ie45sGzf6QpiAAN2A8XDw==",
   "success": true,
   "projectFilePath": "C:\\Users\\alvar\\Desktop\\GITHUB\\Proyecto-C-\\Proyecto.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\alvar\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

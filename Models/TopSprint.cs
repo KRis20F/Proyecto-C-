@@ -1,5 +1,5 @@
 
-namespace TopSprint {
+public class TopSprint {
     public class Root
     {
         public int id { get; set; }

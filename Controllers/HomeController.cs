@@ -2,6 +2,11 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Proyecto.Models;
 
+using System;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+
 namespace Proyecto.Controllers;
 
 public class HomeController : Controller
@@ -27,7 +32,7 @@ public class HomeController : Controller
         HttpResponseMessage response = client.GetAsync(url).Result;
         string jsonResponse = response.Content.ReadAsStringAsync().Result;
 
-        var rankObject = JsonConvert.DeserializeObject<Root>(jsonResponse);
+        var rankObject = JsonConvert.DeserializeObject<TopRank>(jsonResponse);
 
         return View(rankObject);
     }
@@ -41,9 +46,11 @@ public class HomeController : Controller
         HttpResponseMessage response = client.GetAsync(url).Result;
         string jsonResponse = response.Content.ReadAsStringAsync().Result;
 
-        var rankObject = JsonConvert.DeserializeObject<List<Root>>(jsonResponse);
+        var rankObject = JsonConvert.DeserializeObject<List<TopSprint.Root>>(jsonResponse);
 
-        return View(rankObject);
+        var top10RankObjects = rankObject.Take(10).ToList();
+
+        return View(top10RankObjects);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
