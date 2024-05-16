@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\alvar\\.nuget\\packages\\": {}
+    "C:\\Users\\crist\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alvar\\Desktop\\GITHUB\\Proyecto-C-\\Proyecto.csproj",
+      "projectUniqueName": "C:\\Users\\crist\\Desktop\\Archvivos ETP\\PROYECTOS\\PROYECTO C#\\proyecto cs\\Proyecto-C-\\Proyecto.csproj",
       "projectName": "Proyecto",
-      "projectPath": "C:\\Users\\alvar\\Desktop\\GITHUB\\Proyecto-C-\\Proyecto.csproj",
-      "packagesPath": "C:\\Users\\alvar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alvar\\Desktop\\GITHUB\\Proyecto-C-\\obj\\",
+      "projectPath": "C:\\Users\\crist\\Desktop\\Archvivos ETP\\PROYECTOS\\PROYECTO C#\\proyecto cs\\Proyecto-C-\\Proyecto.csproj",
+      "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\crist\\Desktop\\Archvivos ETP\\PROYECTOS\\PROYECTO C#\\proyecto cs\\Proyecto-C-\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alvar\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,6 +38,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -62,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
