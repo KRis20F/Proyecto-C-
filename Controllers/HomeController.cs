@@ -18,9 +18,18 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Top()
     {
-        return View();
+        string url = "https://ch.tetr.io/api/users/lists/league";
+
+        HttpClient client = new HttpClient();
+
+        HttpResponseMessage response = client.GetAsync(url).Result;
+        string jsonResponse = response.Content.ReadAsStringAsync().Result;
+
+        var rankObject = JsonConvert.DeserializeObject<Root>(jsonResponse);
+
+        return View(rankObject);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

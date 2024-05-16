@@ -1,0 +1,8 @@
+for (var i = 0; i < 10; i++)
+{
+    string username = rankObject.data.users[i].username;
+    string country = rankObject.data.users[i].country;
+    double rating = rankObject.data.users[i].league.rating;
+
+    Console.WriteLine($"{i+1} | {username} - {country} -- {rating}");
+}
