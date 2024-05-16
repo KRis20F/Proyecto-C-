@@ -18,7 +18,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Top()
+    public IActionResult TopRank()
     {
         string url = "https://ch.tetr.io/api/users/lists/league";
 
@@ -28,6 +28,20 @@ public class HomeController : Controller
         string jsonResponse = response.Content.ReadAsStringAsync().Result;
 
         var rankObject = JsonConvert.DeserializeObject<Root>(jsonResponse);
+
+        return View(rankObject);
+    }
+
+    public IActionResult TopSprint()
+    {
+        string url = "https://jstris.jezevec10.com/api/leaderboard/1?mode=1";
+
+        HttpClient client = new HttpClient();
+
+        HttpResponseMessage response = client.GetAsync(url).Result;
+        string jsonResponse = response.Content.ReadAsStringAsync().Result;
+
+        var rankObject = JsonConvert.DeserializeObject<List<Root>>(jsonResponse);
 
         return View(rankObject);
     }
