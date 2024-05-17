@@ -7,6 +7,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
+
 namespace Proyecto.Controllers;
 
 public class HomeController : Controller
@@ -20,7 +21,19 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        string url = "https://ch.tetr.io/api/general/stats";
+
+        HttpClient client = new HttpClient();
+
+        HttpResponseMessage response = client.GetAsync(url).Result;
+        string jsonResponse = response.Content.ReadAsStringAsync().Result;
+
+        var ObjectGlobal = JsonConvert.DeserializeObject<InfoGlobal.Root>(jsonResponse);
+
+        // Crear una lista con un solo elemento
+        var modelList = new List<InfoGlobal.Root>() { ObjectGlobal };
+
+        return View(modelList);
     }
 
     public IActionResult TopRank()
@@ -28,11 +41,13 @@ public class HomeController : Controller
         string url = "https://ch.tetr.io/api/users/lists/league";
 
         HttpClient client = new HttpClient();
-
         HttpResponseMessage response = client.GetAsync(url).Result;
         string jsonResponse = response.Content.ReadAsStringAsync().Result;
 
-        var rankObject = JsonConvert.DeserializeObject<TopRank>(jsonResponse);
+        var rankObject = JsonConvert.DeserializeObject<TopRank.Root>(jsonResponse);
+
+        // Limit the users to the top 10
+        rankObject.data.users = rankObject.data.users.Take(10).ToList();
 
         return View(rankObject);
     }

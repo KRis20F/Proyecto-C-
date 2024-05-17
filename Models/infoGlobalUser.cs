@@ -1,4 +1,4 @@
-namespace InfoGlobal{
+public class InfoGlobal{
     public class Cache
     {
         public string status { get; set; }

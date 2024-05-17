@@ -4,17 +4,20 @@
 <html>
 <head>
     <title>Ranking</title>
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <h1>Top Sprint Ranking</h1>
-    <table>
-        @foreach (var rankObject in Model)
-        {
-            <tr>
-                <td>@($"{rankObject.name}")</td>
-                <td><a href="@($"https://jstris.jezevec10.com/replay/{rankObject.id}")" target="_blank">replay</a></td>
-            </tr>
-        }
-    </table>
+    <div class="container-ranking">
+        <h1 class="title-ranking">Top Sprint Ranking</h1>
+        <table class="background-table">
+            @foreach (var rankObject in Model)
+            {
+                <tr>
+                    <td>@($"{rankObject.name}")</td>
+                    <td><a class="btn-ranking" href="@($"https://jstris.jezevec10.com/replay/{rankObject.id}")" target="_blank">replay</a></td>
+                </tr>
+            }
+        </table>
+    </div>
 </body>
 </html>

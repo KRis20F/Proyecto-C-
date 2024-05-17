@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5Pv5cg9vEIH6qhgxVzbgopg6VGeNQ5y186vyrJsGgrueu00bcxpQsqps4Tz1JnZU4bXVhbL80nCZI4tbTQHY4A==",
+  "dgSpecHash": "Zn+IWNM6HPEHsDsqXoZZE+L4QAX1kJSX+O75b9kSoJA/Kh/y7fUwDeyfo13naXhOL1L5BbSftEb7bp6H4KSZuQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\crist\\Desktop\\Archvivos ETP\\PROYECTOS\\PROYECTO C#\\proyecto cs\\Proyecto-C-\\Proyecto.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\crist\\Desktop\\Archvivos ETP\\PROYECTOS\\PROYECTO C#\\Proyecto-C-\\Proyecto.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
