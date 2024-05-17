@@ -1,0 +1,18 @@
+@model SearchUser.Root
+
+
+@if (Model != null && Model.success)
+{
+
+    <table>
+        <tr>
+            <td>@Model.data.user.username</td>
+            <td>@Model.data.user.country</td>
+        </tr>
+    </table>
+}
+
+else 
+{
+    <p>No existe el usuario</p>
+}

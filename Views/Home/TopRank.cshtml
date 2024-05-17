@@ -6,3 +6,16 @@
 
 <link rel="stylesheet" href="~/css/site.css" />
 
+<div class="container-ranking">
+        <h1 class="title-ranking">Top 10 Best Players</h1>
+        <table class="background-table">
+            @foreach (var rankObjecTops in Model)
+            {
+                <tr>
+                    <td>@($"{rankObjecTops.username}")</td>
+                    <td></td>
+                </tr>
+            }
+        </table>
+    </div>
+

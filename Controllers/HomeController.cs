@@ -36,6 +36,34 @@ public class HomeController : Controller
         return View(modelList);
     }
 
+    public async Task<IActionResult> Search(string username) 
+    {
+        string url = $"https://ch.tetr.io/api/users/{username}";
+
+        HttpClient client = new HttpClient();
+
+        HttpResponseMessage response = await client.GetAsync(url);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            ViewBag.ErrorMessage = "Usuario no encontrado";
+            return View("SearchResults"); // Vuelve a la vista principal si hay un error
+        }
+
+
+        string jsonResponse = response.Content.ReadAsStringAsync().Result;
+
+        var jsonObjectsSearch = JsonConvert.DeserializeObject<SearchUser.Root>(jsonResponse);
+
+        if (!jsonObjectsSearch.success)
+        {
+            ViewBag.ErrorMessage = "Usuario no encontrado";
+            return View("SearchResults"); 
+        }
+
+        return View("SearchResults", jsonObjectsSearch);
+    }
+
     public IActionResult TopRank()
     {
         string url = "https://ch.tetr.io/api/users/lists/league";
@@ -44,12 +72,12 @@ public class HomeController : Controller
         HttpResponseMessage response = client.GetAsync(url).Result;
         string jsonResponse = response.Content.ReadAsStringAsync().Result;
 
-        var rankObject = JsonConvert.DeserializeObject<TopRank.Root>(jsonResponse);
+        var rankObjecTops = JsonConvert.DeserializeObject<TopRank.Root>(jsonResponse);
 
         // Limit the users to the top 10
-        rankObject.data.users = rankObject.data.users.Take(10).ToList();
+        rankObjecTops.data.users = rankObjecTops.data.users.Take(10).ToList();
 
-        return View(rankObject);
+        return View(rankObjecTops);
     }
 
     public IActionResult TopSprint()
