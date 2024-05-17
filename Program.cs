@@ -21,6 +21,11 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "topsprint",
+    pattern: "TopSprint",
+    defaults: new { controller = "Home", action = "TopSprint" });
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
