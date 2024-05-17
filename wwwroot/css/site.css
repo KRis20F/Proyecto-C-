@@ -2,6 +2,73 @@ html {
   font-size: 14px;
 }
 
+body {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(58deg, rgb(0 8 12) 56%, rgb(0 173 255) 100%);
+  color: #fff;
+}
+
+.navbar-style-blue{
+  background: #007cb7;
+  color: #fff;
+  padding: 1em;
+}
+
+.title-first {
+  font-size: 3em;
+  text-align: left;
+  padding-block: 36px;
+}
+
+.flex-style {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-earth {
+  border-radius :60px;
+}
+
+.title-rigth {
+  font-size: 2.7em;
+  text-align: end;
+  text-shadow: 7px 1px 10px black;
+}
+
+
+
+/*  -------------- RANKINGS --------------- */
+
+.title-ranking {margin-bottom: 29px;}
+
+.container-ranking{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-table{
+  border: 1px solid #106da0;
+  box-shadow: 2px 0px 16px 5px #106da0;
+}
+
+.background-table tr td:first-child {
+  border: #fff 1px solid;
+  box-shadow: 0px 2px 12px white;
+  padding: .5em 6em;
+}
+
+.btn-ranking {
+  padding: 8px 34px;
+  color: #fff;
+  background: #2499ff;
+  text-decoration: none;
+  text-shadow: 0 0 10px black;
+  border-bottom-right-radius: 13px;
+  box-shadow: 0 0 12px 5px #2f9eff;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
