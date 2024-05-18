@@ -1,18 +1,55 @@
 @model SearchUser.Root
 
+<head>
+    <title>search</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 
-@if (Model != null && Model.success)
-{
+<body>
+    <div class="page-container">
+        <div class="container-search">
+            <div class="background-div">
+                @if (Model != null && Model.success)
+                {
+                    <div class="user-info">
+                        <h1>
+                            @Model.data.user.username
+                            @if (Model.data.user.country != null)
+                            {
+                                <img class="user-flag" src="@($"https://tetr.io/res/flags/{Model.data.user.country.ToLower()}.png")">
+                            }
+                        </h1>
+                        <div class="avatar">
+                            @if (Model.data.user.avatar_revision != 0)
+                            {
+                                <img class="img-search" src="@($"https://tetr.io/user-content/avatars/{Model.data.user._id}.jpg?rv={Model.data.user.avatar_revision}")">
+                            }
+                            else
+                            {
+                                <img class="img-search" src="https://t3.ftcdn.net/jpg/03/53/11/00/360_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg">
+                            }
+                        </div>
+                    </div>
 
-    <table>
-        <tr>
-            <td>@Model.data.user.username</td>
-            <td>@Model.data.user.country</td>
-        </tr>
-    </table>
-}
-
-else 
-{
-    <p>No existe el usuario</p>
-}
+                    <table class="table-stats">
+                        <tr>
+                            <td>CURRENT RANK: @Model.data.user.league.rank.ToUpper()</td>
+                            <td>CURRENT POSITION: @Model.data.user.league.standing</td>
+                        </tr>
+                        <tr>
+                            <td>GAMES PLAYED: @Model.data.user.league.gamesplayed</td>
+                            <td>GAMES WON: @Model.data.user.league.gameswon</td>
+                        </tr>
+                    </table>
+                }
+                else 
+                {
+                    <div class="unknown-info">
+                        <h1>No existe este usuario</h1>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>

@@ -49,7 +49,7 @@ public class SearchUser {
         public string role { get; set; }
         public DateTime ts { get; set; }
         public List<object> badges { get; set; }
-        public int xp { get; set; }
+        public double xp { get; set; }
         public int gamesplayed { get; set; }
         public int gameswon { get; set; }
         public double gametime { get; set; }

@@ -64,22 +64,6 @@ public class HomeController : Controller
         return View("SearchResults", jsonObjectsSearch);
     }
 
-    public IActionResult TopRank()
-    {
-        string url = "https://ch.tetr.io/api/users/lists/league";
-
-        HttpClient client = new HttpClient();
-        HttpResponseMessage response = client.GetAsync(url).Result;
-        string jsonResponse = response.Content.ReadAsStringAsync().Result;
-
-        var rankObjecTops = JsonConvert.DeserializeObject<TopRank.Root>(jsonResponse);
-
-        // Limit the users to the top 10
-        rankObjecTops.data.users = rankObjecTops.data.users.Take(10).ToList();
-
-        return View(rankObjecTops);
-    }
-
     public IActionResult TopSprint()
     {
         string url = "https://jstris.jezevec10.com/api/leaderboard/1?mode=1";
