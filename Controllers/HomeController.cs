@@ -30,7 +30,6 @@ public class HomeController : Controller
 
         var ObjectGlobal = JsonConvert.DeserializeObject<InfoGlobal.Root>(jsonResponse);
 
-        // Crear una lista con un solo elemento
         var modelList = new List<InfoGlobal.Root>() { ObjectGlobal };
 
         return View(modelList);
@@ -44,22 +43,9 @@ public class HomeController : Controller
 
         HttpResponseMessage response = await client.GetAsync(url);
 
-        if (!response.IsSuccessStatusCode)
-        {
-            ViewBag.ErrorMessage = "Usuario no encontrado";
-            return View("SearchResults"); // Vuelve a la vista principal si hay un error
-        }
-
-
         string jsonResponse = response.Content.ReadAsStringAsync().Result;
 
         var jsonObjectsSearch = JsonConvert.DeserializeObject<SearchUser.Root>(jsonResponse);
-
-        if (!jsonObjectsSearch.success)
-        {
-            ViewBag.ErrorMessage = "Usuario no encontrado";
-            return View("SearchResults"); 
-        }
 
         return View("SearchResults", jsonObjectsSearch);
     }
