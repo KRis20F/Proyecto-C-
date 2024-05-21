@@ -34,8 +34,16 @@
 
                     <table class="table-stats">
                         <tr>
+                        @if (Model.data.user.league.rank != "z")
+                        {
                             <td>CURRENT RANK: @Model.data.user.league.rank.ToUpper()</td>
                             <td>CURRENT POSITION: @Model.data.user.league.standing</td>
+                        }
+                        else
+                        {
+                            <td>CURRENT RANK: -</td>
+                            <td>CURRENT POSITION: -</td>
+                        }
                         </tr>
                         <tr>
                             <td>GAMES PLAYED: @Model.data.user.league.gamesplayed</td>
